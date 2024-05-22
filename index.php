@@ -1,5 +1,6 @@
 <?php require_once __DIR__ . "/partials/function.php" ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +19,17 @@
         <input type="text" class="form-control w-25 mx-1" id="subscribe" placeholder="user@gmail.com" name="email">
         <button type="submit" class="btn btn-primary px-3">Invia</button>
     </form>
-    <div class="p-5 text-center <?php echo strpos($return, 'corretto') !== false ? 'alert alert-success' : 'alert alert-danger'; ?>">
-        <?php echo $return; ?>
+    <?php if (isset($valid)) { ?>
+        <div class="p-5 text-center alert alert-success">
+            <?php echo $valid; ?>
+        </div>
+    <?php } ?>
+
+    <?php if (isset($invalid)) { ?>
+        <div class="p-5 text-center alert alert-danger">
+            <?php echo $invalid; ?>
+        </div>
+    <?php } ?>
     </div>
 
 </body>
