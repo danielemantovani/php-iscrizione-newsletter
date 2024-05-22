@@ -18,9 +18,10 @@
         <input type="text" class="form-control w-25 mx-1" id="subscribe" placeholder="user@gmail.com" name="email">
         <button type="submit" class="btn btn-primary px-3">Invia</button>
     </form>
-    <div class="p-5 fw-bold">
+    <div class="p-5 text-center <?php echo strpos($return, 'corretto') !== false ? 'alert alert-success' : 'alert alert-danger'; ?>">
         <?php echo $return; ?>
     </div>
+
 </body>
 
 </html>
