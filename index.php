@@ -1,3 +1,14 @@
+<?php 
+        if (isset($_POST["email"])) {
+            $user_email = $_POST["email"];
+            if (strpos($user_email, "@") !== false && strpos($user_email, ".") !== false) {
+                $return= "Formato mail corretto";
+            } else {
+                $return= "Devi inserire la @ o il .";
+            }
+        }
+        ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +21,15 @@
 </head>
 
 <body>
-    <form class="p-5 d-flex" action="">
-        <label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="email" class="form-control w-25 mx-1" id="exampleFormControlInput1" placeholder="user@gmail.com">
-        <button type="button" class="btn btn-primary px-3">Invia</button>
+    <h1 class="text-primary p-5">Inserisci la tua mail per iscriverti alla newsletter</h1>
+    <form class="p-5 d-flex" action="index.php" method="POST">
+        <label for="subscribe" class="form-label"></label>
+        <input type="text" class="form-control w-25 mx-1" id="subscribe" placeholder="user@gmail.com" name="email">
+        <button type="submit" class="btn btn-primary px-3">Invia</button>
     </form>
+    <div class="p-5 fw-bold">
+        <?php echo $return; ?>
+    </div>
 </body>
 
 </html>
