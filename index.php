@@ -20,6 +20,7 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
+    
     <h1 class="text-primary p-5">Inserisci la tua mail per iscriverti alla newsletter</h1>
     <form class="p-5 d-flex" action="index.php" method="POST">
         <label for="subscribe" class="form-label"></label>
@@ -37,7 +38,6 @@ if (!isset($_SESSION)) {
             <?php echo $invalid; ?>
         </div>
     <?php } ?>
-    </div>
 
 </body>
 
